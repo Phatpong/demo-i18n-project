@@ -42,7 +42,7 @@ export const config = {
 	matcher: [
 		//
 		// "/((?!.+\\.[\\w]+$|_next).*)",
-		// "/(api|trpc)(.*)",
+		"/(api|trpc)(.*)",
 		"/",
 		"/(en|th)/:path*", // ทุก Route ที่ขึ้นต้นด้วย /en หรือ /th จะโดน clerk protect หมด
 	],
