@@ -1,5 +1,5 @@
-import { Locale } from "@/lib/i18n/i18n.type";
-import { useTranslations } from "next-intl";
+import { Locale } from "@/lib/i18n/i18n.config";
+import Link from "next/link";
 
 type HomePageProps = {
 	params: {
@@ -7,12 +7,17 @@ type HomePageProps = {
 	};
 };
 
-export default function Home({ params: { locale } }: HomePageProps) {
-	const $t = useTranslations();
-
+const HomePage = ({ params: { locale } }: HomePageProps) => {
 	return (
-		<main className="flex items-center justify-center h-screen w-screen">
-			<h1 className="text-2xl font-semibold">{$t("hello")}</h1>
-		</main>
+		<div className="flex flex-col">
+			<Link
+				className="text-blue-500 underline"
+				href={`/${locale}/products`}>
+				Go to {`/${locale}/products`}
+			</Link>
+			HomePage
+		</div>
 	);
-}
+};
+
+export default HomePage;
